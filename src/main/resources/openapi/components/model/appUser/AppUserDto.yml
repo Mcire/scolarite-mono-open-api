@@ -1,0 +1,27 @@
+type: object
+properties:
+  idAppUser:
+    type: integer
+    format: int64
+    description: Fonctionnel id of the user
+  firstName:
+    type: string
+    description: First Name
+  lastName:
+    type: string
+    description: Last Name
+  email:
+    type: string
+    description: email
+  passwoord:
+    type: string
+    description: Last Name
+  etat:
+    type: integer
+    format: int64
+    description: state of user
+  produits:
+    type: array
+    description: The List of user and their products
+    items:
+      $ref: '../produit/ProduitDTO.yml'

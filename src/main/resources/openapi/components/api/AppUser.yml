@@ -1,0 +1,180 @@
+openapi: 3.0.3
+
+info:
+  title: API USER
+  version: "1.0"
+  description: SCOLARITE MONO API
+
+servers:
+  - url: http://localhost:8080/scolarite-mono/api
+
+tags:
+  - name: AppUser
+    description: AppUser specific data.
+
+paths:
+  /appUsers:
+    get:
+      tags:
+        - AppUser
+      summary: Get All Actifs Users
+      operationId: getAllUsers
+      parameters:
+        - name: currentPage
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: sizePage
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            'application/json':
+              schema:
+                $ref: '../model/appUser/AppUserResultListDTO.yml'
+              example:
+                userList:
+                  - firstName: che
+                    lastName: 444
+                    email: che@hmail.cu
+                    password: baiedescochons44
+                    etat: 1
+                  - firstName: idi
+                    lastName: Amindada
+                    email: ouganda@hmail.cu
+                    password: crocodille99
+                    etat: 1
+        404:
+          description: NOT FOUND
+        400:
+          description: BAD REQUEST
+
+    post:
+      tags:
+        - AppUser
+      summary: Add a user
+      operationId: addAppUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../model/appUser/UserDTO.yml'
+            example:
+              idAppUser: 0
+              firstName: Ngor
+              lastName: SECK
+              email: Ngor@seck.com
+              password: javaSpring
+              etat: 1
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '../model/appUser/UserDTO.yml'
+              example:
+              idAppUser: 0
+              firstName: Ngor
+              lastName: SECK
+              email: Ngor@seck.com
+              password: javaSpring
+              etat: 1
+        '404':
+          description: NOT FOUND
+        '400':
+          description: BAD REQUEST
+
+  /appUsers-reference:
+    get:
+      tags:
+        - AppUser
+      summary: Retrieve an user
+      operationId: getAppUser
+      parameters:
+        - name: idAppUser
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example:
+            idAppUser: 1
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '../model/appUser/AppUerDTO.yml'
+              examples:
+                appUser1:
+                  value:
+                    - firstName: che
+                      lastName: 444
+                      email: che@hmail.cu
+                      password: baiedescochons44
+                      etat: 1
+                appUser2:
+                  value:
+                    - firstName: che
+                      lastName: 444
+                      email: che@hmail.cu
+                      password: baiedescochons44
+                      etat: 1
+        '404':
+          description: NOT FOUND
+        '400':
+          description: BAD REQUEST
+
+    put:
+      tags:
+        - AppUser
+      summary: update a user
+      operationId: updateAppUser
+      parameters:
+        - name: idAppUser
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example:
+            idAppUser: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../model/appUser/AppUserDTO.yml'
+            examples:
+              appUser:
+                value:
+                  - firstName: che
+                    lastName: 444
+                    email: che@hmail.cu
+                    password: baiedescochons44
+                    etat: 1
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '../model/appUser/AppUserDTO.yml'
+              example:
+                - firstName: che
+                  lastName: 444
+                  email: che@hmail.cu
+                  password: baiedescochons44
+                  etat: 1
+        '404':
+          description: NOT FOUND
+        '400':
+          description: BAD REQUEST

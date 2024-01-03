@@ -1,0 +1,7 @@
+type: object
+properties:
+  produitList:
+    type: array
+    description: The List of the products
+    items:
+      $ref: './ProduitDTO.yml'

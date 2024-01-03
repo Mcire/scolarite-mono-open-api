@@ -1,0 +1,7 @@
+type: object
+properties:
+  AppUserList:
+    type: array
+    description: The List of the users
+    items:
+      $ref: './AppUserDTO.yml'

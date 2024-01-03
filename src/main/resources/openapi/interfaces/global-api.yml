@@ -1,0 +1,49 @@
+openapi: "3.0.0"
+
+info:
+  title: API de Scolarite-mono #ca sera utiliser pour les endPoint @RequestMapping("${openapi.aPIDeTest.base-path:/service/api}")
+  version: "1.0"
+  description: Scolarite Mono !! Projet oppen Api
+
+servers:
+  - url: http://localhost:8080/scolarite-mono/api
+
+tags:
+  - name: AppRoles
+    description: AppRoles specific data.
+  - name: AppUser
+    description: AppUser specific data.
+  - name: Produit
+    description: Produit specific data.
+
+paths:
+
+  ##############
+  ## API Client ##
+  ##############
+
+  /appRoles:
+    $ref: '../components/api/appRole.yml#/paths/~1appRoles'
+
+  /appRoles/{idAppRoles}:
+    $ref: '../components/api/appRole.yml#/paths/~1appRoles-reference'
+
+  ##############
+  ## API AppUser ##
+  ##############
+
+  /appUsers:
+    $ref: '../components/api/appUser.yml#/paths/~appUsers'
+
+  /appUsers/{idappUser}:
+    $ref: '../components/api/commande.yml#/paths/~1appUsers-reference'
+
+  ##############
+  ## API Produits ##
+  ##############
+
+  /produits:
+    $ref: '../components/api/produit.yml#/paths/~1produits'
+
+  /produits/{idProduit}:
+    $ref: '../components/api/produit.yml#/paths/~1produits-reference'
