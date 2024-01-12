@@ -15,7 +15,7 @@ properties:
     description: email
   passwoord:
     type: string
-    description: Last Name
+    description: password
   etat:
     type: integer
     format: int64
@@ -24,4 +24,4 @@ properties:
     type: array
     description: The List of user and their products
     items:
-      $ref: '../produit/ProduitDTO.yml'
+      $ref: './produit/ProduitDTO.yml'

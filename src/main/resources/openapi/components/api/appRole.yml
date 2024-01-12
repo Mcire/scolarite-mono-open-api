@@ -16,7 +16,7 @@ paths:
   /appRoles:
     get:
       tags:
-        - AppRole
+        -AppRole
       summary: Get All Actif Role
       operationId: getAllAppRoles
       parameters:
@@ -44,10 +44,10 @@ paths:
         '400':
           description: BAD REQUEST
 
-  /articles-reference:
+  /appRoles-reference:
     get:
       tags:
-        - AppRole
+        -AppRole
       summary: Retrieve an AppRole
       operationId: getAppRole
       parameters:

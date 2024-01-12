@@ -11,4 +11,4 @@ properties:
     type: array
     description: The List of Role and their users
     items:
-      $ref: '../appUser/AppUserDTO.yml'
+      $ref: './appUser/AppUserDTO.yml'

@@ -16,7 +16,7 @@ paths:
   /appUsers:
     get:
       tags:
-        - AppUser
+        -AppUser
       summary: Get All Actifs Users
       operationId: getAllUsers
       parameters:
@@ -58,14 +58,14 @@ paths:
 
     post:
       tags:
-        - AppUser
+        -AppUser
       summary: Add a user
       operationId: addAppUser
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '../model/appUser/UserDTO.yml'
+              $ref: '../model/appUser/AppUserDTO.yml'
             example:
               idAppUser: 0
               firstName: Ngor
@@ -79,7 +79,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../model/appUser/UserDTO.yml'
+                $ref: '../model/appUser/AppUserDTO.yml'
               example:
               idAppUser: 0
               firstName: Ngor
@@ -95,7 +95,7 @@ paths:
   /appUsers-reference:
     get:
       tags:
-        - AppUser
+        -AppUser
       summary: Retrieve an user
       operationId: getAppUser
       parameters:
@@ -113,7 +113,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../model/appUser/AppUerDTO.yml'
+                $ref: '../model/appUser/AppUserDTO.yml'
               examples:
                 appUser1:
                   value:
@@ -136,7 +136,7 @@ paths:
 
     put:
       tags:
-        - AppUser
+        -AppUser
       summary: update a user
       operationId: updateAppUser
       parameters:

@@ -9,7 +9,7 @@ servers:
   - url: http://localhost:8080/scolarite-mono/api
 
 tags:
-  - name: AppRoles
+  - name: AppRole
     description: AppRoles specific data.
   - name: AppUser
     description: AppUser specific data.
@@ -25,7 +25,7 @@ paths:
   /appRoles:
     $ref: '../components/api/appRole.yml#/paths/~1appRoles'
 
-  /appRoles/{idAppRoles}:
+  /appRoles/{idAppRole}:
     $ref: '../components/api/appRole.yml#/paths/~1appRoles-reference'
 
   ##############
@@ -33,10 +33,10 @@ paths:
   ##############
 
   /appUsers:
-    $ref: '../components/api/appUser.yml#/paths/~appUsers'
+    $ref: '../components/api/appUser.yml#/paths/~1appUsers'
 
-  /appUsers/{idappUser}:
-    $ref: '../components/api/commande.yml#/paths/~1appUsers-reference'
+  /appUsers/{idAppUser}:
+    $ref: '../components/api/appUser.yml#/paths/~1appUsers-reference'
 
   ##############
   ## API Produits ##

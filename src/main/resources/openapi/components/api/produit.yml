@@ -16,7 +16,7 @@ paths:
   /produits:
     get:
       tags:
-        - Produit
+        -Produit
       summary: Get All Actif Produit
       operationId: getAllProduits
       parameters:
@@ -44,10 +44,10 @@ paths:
         '400':
           description: BAD REQUEST
 
-  /articles-reference:
+  /produits-reference:
     get:
       tags:
-        - Produit
+        -Produit
       summary: Retrieve an Produit
       operationId: getProduit
       parameters:
